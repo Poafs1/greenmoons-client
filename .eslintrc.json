@@ -4,18 +4,31 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:@next/next/recommended",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
-  "plugins": ["jest", "@typescript-eslint"],
+  "plugins": [
+    "jest",
+    "@typescript-eslint"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "tsconfigRootDir": ".",
-    "project": ["tsconfig.json"],
+    "project": [
+      "tsconfig.json"
+    ],
     "ecmaFeatures": {
       "jsx": true
     }
   },
-  "ignorePatterns": ["dist", "node_modules", ".eslintrc.js", "*.config.ts", "*.config.js", "*.setup.js"],
+  "ignorePatterns": [
+    "dist",
+    "node_modules",
+    ".eslintrc.js",
+    "*.config.ts",
+    "*.config.js",
+    "*.setup.js"
+  ],
   "rules": {
     "react-hooks/exhaustive-deps": "off",
     "@next/next/no-html-link-for-pages": "off",
@@ -25,13 +38,19 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react/display-name": "off",
-    "eqeqeq": ["error", "always"],
+    "eqeqeq": [
+      "error",
+      "always"
+    ],
     "no-console": "warn",
     "object-shorthand": "error",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
-      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
     ],
     "no-return-await": "off",
     "@typescript-eslint/return-await": "error",
@@ -39,7 +58,9 @@
       "error",
       {
         "selector": "interface",
-        "format": ["PascalCase"],
+        "format": [
+          "PascalCase"
+        ],
         "custom": {
           "regex": "^I[A-Z]",
           "match": true
@@ -48,12 +69,32 @@
     ],
     "padding-line-between-statements": [
       "error",
-      { "blankLine": "always", "prev": "*", "next": "return" },
-      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      },
+      {
+        "blankLine": "always",
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": "*"
+      },
       {
         "blankLine": "any",
-        "prev": ["const", "let", "var"],
-        "next": ["const", "let", "var"]
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": [
+          "const",
+          "let",
+          "var"
+        ]
       }
     ]
   }
