@@ -7,6 +7,10 @@
 ## Installation
 
 ```sh
+cp .env.example .env
+```
+
+```sh
 yarn install
 ```
 
