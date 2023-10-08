@@ -24,6 +24,15 @@ yarn dev
 docker-compose -f docker-compose.dev.yaml up --build
 ```
 
+## Testing Account
+
+```sh
+{
+    "email": "prach.yot@gmail.com",
+    "password": "mMoS9JNd"
+}
+```
+
 ## Unit Test
 
 ```sh
