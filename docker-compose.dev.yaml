@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   client:
-    container_name: components-kit-client
+    container_name: greenmoons-client
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -11,18 +11,18 @@ services:
     env_file:
       - .env
     networks:
-      - components-kit-networks
+      - greenmoons-networks
 
-  nginx:
-    container_name: components-kit-nginx
-    build:
-      context: ./nginx
-      dockerfile: ./Dockerfile
-    ports:
-      - '80:80'
-    networks:
-      - components-kit-networks
+  # nginx:
+  #   container_name: greenmoons-nginx
+  #   build:
+  #     context: ./nginx
+  #     dockerfile: ./Dockerfile
+  #   ports:
+  #     - '80:80'
+  #   networks:
+  #     - greenmoons-networks
 
 networks:
-  components-kit-networks:
+  greenmoons-networks:
     driver: bridge
