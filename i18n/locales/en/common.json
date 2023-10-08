@@ -1,0 +1,44 @@
+{
+  "brand": "Greenmoons",
+  "commons": {
+    "somethingWentWrong": "Something went wrong. Please try again later."
+  },
+  "pages": {
+    "home": {
+      "welcome": "Welcome",
+      "pleaseEnterYourSignInDetailsBelow": "Please enter your sign in details below.",
+      "signIn": "Sign In",
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "greenmoons@example.com"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Password"
+        }
+      }
+    },
+    "movie": {
+      "moviesFinder": "Movies Finder",
+      "director": "Director",
+      "actor": "Actor",
+      "genre": "Genre",
+      "rating": "Rating",
+      "duration": "Duration",
+      "releaseDate": "Release Date",
+      "movieTrailer": "Movie Trailer"
+    }
+  },
+  "components": {
+    "head": {
+      "defaultDescription": "",
+      "defaultKeywords": ""
+    },
+    "sidebar": {
+      "logout": "Logout",
+      "moviesFinder": "Movies Finder",
+      "myFavoriteMovies": "My Favorite Movies"
+    }
+  }
+}
