@@ -1,9 +1,13 @@
 import { ReactElement } from 'react';
 import Layout from '../layouts';
+import { Button } from '@mui/material';
 
 function Home(): ReactElement {
   return (
-    <div>Home Page</div>
+    <div>
+      <h1>Home Page</h1>
+      <Button variant="contained">Hello world</Button>
+    </div>
   );
 }
 
