@@ -13,6 +13,7 @@ const FavoriteButton: FC<IFavoriteButton> = ({ movie, onClick }) => {
     <Favorite
       sx={{ color: movie?.is_favorite ? red[400] : grey[400], width: '20px', height: '20px', cursor: 'pointer' }}
       onClick={() => onClick(movie)}
+      data-testid='favorite-button'
     />
   );
 };

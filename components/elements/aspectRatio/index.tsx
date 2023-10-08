@@ -15,6 +15,7 @@ export interface IAspectRatioProps {
 const AspectRatio = ({ ratio, children }: IAspectRatioProps) => {
   return (
     <Box
+      data-testid='aspect-ratio-box'
       sx={{
         position: 'relative',
         width: '100%',
