@@ -6,17 +6,17 @@ export const theme = createTheme({
     h1: {
       fontSize: '32px',
       fontWeight: 700,
-      color: '#2D2D2D',
+      color: green['900'],
     },
     h2: {
       fontSize: '28px',
       fontWeight: 700,
-      color: '#2D2D2D',
+      color: green['900'],
     },
     h3: {
       fontSize: '24px',
       fontWeight: 700,
-      color: '#2D2D2D',
+      color: green['900'],
     },
     body1: {
       fontSize: '16px',

@@ -5,8 +5,9 @@ export interface IConstants {
     refreshToken: string;
   };
   redirection: {
-    movie: string;
+    movies: string;
     movieById: string;
+    moviesFavorite: string;
     signIn: string;
   };
   api: {
@@ -23,7 +24,8 @@ export const CONSTANTS: IConstants = {
     refreshToken: 'refresh_token',
   },
   redirection: {
-    movie: '/movies',
+    movies: '/movies',
+    moviesFavorite: '/movies/favorite',
     movieById: '/movies/[id]',
     signIn: '/',
   },

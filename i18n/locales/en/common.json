@@ -18,6 +18,16 @@
           "placeholder": "Password"
         }
       }
+    },
+    "movie": {
+      "moviesFinder": "Movies Finder",
+      "director": "Director",
+      "actor": "Actor",
+      "genre": "Genre",
+      "rating": "Rating",
+      "duration": "Duration",
+      "releaseDate": "Release Date",
+      "movieTrailer": "Movie Trailer"
     }
   },
   "components": {
@@ -26,7 +36,9 @@
       "defaultKeywords": ""
     },
     "sidebar": {
-      "logout": "Logout"
+      "logout": "Logout",
+      "moviesFinder": "Movies Finder",
+      "myFavoriteMovies": "My Favorite Movies"
     }
   }
 }

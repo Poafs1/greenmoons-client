@@ -21,7 +21,7 @@ function Home(): ReactElement {
     const token = tokenGet(CONSTANTS.token.accessToken);
 
     if (token) {
-      router.push(CONSTANTS.redirection.movie);
+      router.push(CONSTANTS.redirection.movies);
     }
   }, []);
 
@@ -36,7 +36,7 @@ function Home(): ReactElement {
 
       tokenSetAll(data);
 
-      router.push(CONSTANTS.redirection.movie);
+      router.push(CONSTANTS.redirection.movies);
     } catch {
       singInForm.setErrors({
         password: t('commons.somethingWentWrong'),

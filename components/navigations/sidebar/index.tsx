@@ -7,13 +7,15 @@ import Image from 'next/image';
 import ListItems from '../../buttons/listItems';
 import axios from 'axios';
 import { CONSTANTS } from '../../../constants';
-import { tokenRemoveAll } from '../../../utils/localstorage';
+import { tokenGet, tokenRemoveAll } from '../../../utils/localstorage';
+import Breadcrumb, { IBreadcrumbs } from '../breadcrumbs';
 
 export interface ISidebar {
   children: ReactNode;
+  breadcrumbs?: IBreadcrumbs;
 }
 
-const Sidebar: FC<ISidebar> = ({ children }) => {
+const Sidebar: FC<ISidebar> = ({ children, breadcrumbs = { items: [] } }) => {
   const { t } = useTranslation();
   const drawerWidth = useMemo(() => 280, []);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,7 +25,11 @@ const Sidebar: FC<ISidebar> = ({ children }) => {
   };
 
   const handleLogout = useCallback(async () => {
-    await axios.post(CONSTANTS.api.auth + '/signout');
+    await axios.post(
+      CONSTANTS.api.auth + '/signout',
+      {},
+      { headers: { Authorization: `Bearer ${tokenGet(CONSTANTS.token.accessToken)}` } },
+    );
 
     tokenRemoveAll();
 
@@ -47,12 +53,14 @@ const Sidebar: FC<ISidebar> = ({ children }) => {
         <ListItems
           items={[
             {
-              label: 'Movies Finder',
+              label: t('components.sidebar.moviesFinder'),
               icon: <Movie />,
+              href: CONSTANTS.redirection.movies,
             },
             {
-              label: 'My Favorite Movies',
+              label: t('components.sidebar.myFavoriteMovies'),
               icon: <MovieFilter />,
+              href: CONSTANTS.redirection.moviesFavorite,
             },
           ]}
         />
@@ -142,6 +150,7 @@ const Sidebar: FC<ISidebar> = ({ children }) => {
       </Box>
       <Box component='main' sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}>
         <Toolbar sx={{ display: { sm: 'none', xs: 'block' } }} />
+        <Breadcrumb {...breadcrumbs} />
         {children}
       </Box>
     </Box>
