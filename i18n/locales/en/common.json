@@ -1,7 +1,25 @@
 {
   "brand": "Greenmoons",
-  "commons": {},
-  "pages": {},
+  "commons": {
+    "somethingWentWrong": "Something went wrong. Please try again later."
+  },
+  "pages": {
+    "home": {
+      "welcome": "Welcome",
+      "pleaseEnterYourSignInDetailsBelow": "Please enter your sign in details below.",
+      "signIn": "Sign In",
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "greenmoons@example.com"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Password"
+        }
+      }
+    }
+  },
   "components": {
     "head": {
       "defaultDescription": "",

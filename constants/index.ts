@@ -1,3 +1,5 @@
+import { SERVER } from '../configs';
+
 export interface IConstants {
   brand: string;
   token: {
@@ -6,6 +8,9 @@ export interface IConstants {
   };
   redirection: {
     home: string;
+    signIn: string;
+  };
+  api: {
     signIn: string;
   };
 }
@@ -18,6 +23,9 @@ export const CONSTANTS: IConstants = {
   },
   redirection: {
     home: '/home',
-    signIn: '/'
+    signIn: '/',
+  },
+  api: {
+    signIn: `${SERVER}/api/auth/signin`,
   },
 };

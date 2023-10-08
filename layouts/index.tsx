@@ -14,7 +14,12 @@ const Layout = (props: ILayoutProps) => {
     <div id='app-container'>
       <Head title={title} description={description} />
       <div>
-        <div>{children}</div>
+        <div
+          style={{
+            minHeight: '100vh',
+          }}>
+          {children}
+        </div>
       </div>
     </div>
   );
