@@ -26,13 +26,15 @@ const Button: FC<IButton> = ({
   disabled,
   label = '',
   variant = 'contained',
-  fullWidth = true,
+  fullWidth = false,
   size = 'medium',
   appearance = 'primary',
+  onClick,
 }) => {
   return (
     <ButtonMUI
       color={appearance}
+      sx={{ color: variant === 'text' ? 'white' : '' }}
       variant={variant}
       fullWidth={fullWidth}
       startIcon={startIcon}
@@ -41,6 +43,7 @@ const Button: FC<IButton> = ({
       type={type}
       form={form}
       disabled={disabled}
+      onClick={onClick}
       href={href}>
       {label}
     </ButtonMUI>

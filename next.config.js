@@ -9,6 +9,7 @@ const nextConfig = {
       'images.unsplash.com',
       'via.placeholder.com',
       'lh3.googleusercontent.com',
+      'cdn.majorcineplex.com',
       ...(process.env.NEXT_PUBLIC_S3_BUCKET?.split(',') || []),
     ],
   },

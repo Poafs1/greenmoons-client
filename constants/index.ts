@@ -1,5 +1,3 @@
-import { SERVER } from '../configs';
-
 export interface IConstants {
   brand: string;
   token: {
@@ -7,11 +5,14 @@ export interface IConstants {
     refreshToken: string;
   };
   redirection: {
-    home: string;
+    movie: string;
+    movieById: string;
     signIn: string;
   };
   api: {
-    signIn: string;
+    auth: string;
+    users: string;
+    movie: string;
   };
 }
 
@@ -22,10 +23,13 @@ export const CONSTANTS: IConstants = {
     refreshToken: 'refresh_token',
   },
   redirection: {
-    home: '/home',
+    movie: '/movies',
+    movieById: '/movies/[id]',
     signIn: '/',
   },
   api: {
-    signIn: `${SERVER}/api/auth/signin`,
+    auth: '/api/auth',
+    users: '/api/users',
+    movie: '/api/movie',
   },
 };

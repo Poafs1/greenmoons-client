@@ -24,6 +24,9 @@
     "head": {
       "defaultDescription": "",
       "defaultKeywords": ""
+    },
+    "sidebar": {
+      "logout": "Logout"
     }
   }
 }

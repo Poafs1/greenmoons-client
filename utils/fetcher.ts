@@ -2,17 +2,18 @@ import axios from 'axios';
 import { tokenGet, tokenRemoveAll, tokenSetAll } from './localstorage';
 import { CONSTANTS } from '../constants';
 import { ContentTypeEnum } from '../enums/contentType';
-import { SERVER } from '../configs';
 
 const handleFetchError = () => {
   tokenRemoveAll();
   window.location.href = CONSTANTS.redirection.signIn;
 };
 
-export const fetcher = async (url: string) => {
-  const accessToken = tokenGet(CONSTANTS.token.accessToken);
-
+export const fetcher = async (url: string, isPublic = false) => {
   try {
+    const accessToken = tokenGet(CONSTANTS.token.accessToken);
+
+    if (!isPublic && !accessToken) return;
+
     const response = await axios.get(url, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -32,16 +33,24 @@ export const fetcher = async (url: string) => {
       }
 
       try {
-        const refreshResponse = await axios.post(`${SERVER}/api/user/auth/refresh-token`, {
-          refreshToken,
-        });
+        const refreshResponse = await axios.post(
+          CONSTANTS.api.auth + '/refresh',
+          {
+            refreshToken,
+          },
+          {
+            headers: {
+              ContentType: ContentTypeEnum.APPLICATION_JSON,
+              Authorization: `Bearer ${refreshToken}`,
+            },
+          },
+        );
 
         if (refreshResponse.status !== 201) {
           handleFetchError();
 
           return;
         }
-
         const newAccessToken = refreshResponse.data.accessToken;
 
         tokenSetAll({ refreshToken: String(refreshToken), accessToken: newAccessToken });
