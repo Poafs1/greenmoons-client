@@ -16,7 +16,7 @@ import axios from 'axios';
 import { tokenGet } from '../../utils/localstorage';
 import { green } from '@mui/material/colors';
 import humanizeDuration from 'humanize-duration';
-import { mapDateToDDMMYYYY } from '../../utils/date';
+import { mapDateToDDMMMBBBB } from '../../utils/date';
 
 function Movie(): ReactElement {
   const { t } = useTranslation();
@@ -117,7 +117,7 @@ function Movie(): ReactElement {
                     <Box component='span' fontWeight={700} color={green[900]}>
                       {t('pages.movie.releaseDate')}:{' '}
                     </Box>
-                    {mapDateToDDMMYYYY(new Date(data?.release_date || ''))}
+                    {mapDateToDDMMMBBBB(new Date(data?.release_date || ''))}
                   </Typography>
                 </Stack>
               </Stack>
